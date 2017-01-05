@@ -1,24 +1,88 @@
-.App {
-  text-align: center;
+html, body, #root {
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background: grey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#dfe6fe, #949ab4); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#dfe6fe, #949ab4);  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#dfe6fe, #949ab4);  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#dfe6fe, #949ab4);  /* Standard syntax */
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.contentarea {
+  position: absolute;
+  height:580px;
+  width:380px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App-intro {
-  font-size: large;
+.contentbox {
+  background: blue;
+  position: absolute;
+  height: 460px;
+  width: 260px;
+  border: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.nav {
+  right: 10%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.navlist {
+  text-align:right;
+  list-style: none;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height:4.3em;
+  padding-right: 10px;
+}
+
+.navlink {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: black;
+  text-align: right;
+}
+
+.line {
+  position: absolute;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid black;
+  z-index: 99;
+}
+
+.hello {
+  position: fixed;
+  top: 20%;
+  left: 15%;
+}
+
+.hand {
+  width:60px;
+  animation-duration: 0.18s;
+  animation-name: wave;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition-timing-function: cubic-bezier(0.8, 2.7, 0.58, 1);
+  transform-origin: 50% 100%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
 }
