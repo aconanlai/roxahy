@@ -15,7 +15,14 @@ class Nav extends Component {
         <ul className="navlist">
           {links.map((link, i) => {
             return (
-              <NavLink key={i} component={link.component} name={link.name} handleNavResize={this.props.handleNavResize} />
+              <NavLink 
+                key={i} 
+                component={link.component} 
+                name={link.name} 
+                handleNavResize={this.props.handleNavResize} 
+                handleHover={this.props.handleHover} 
+                hovered={this.props.hovered === link.component}
+              />
             );
           })}
         </ul>

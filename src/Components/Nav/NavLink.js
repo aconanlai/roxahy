@@ -24,7 +24,18 @@ class NavLink extends Component {
   render() {
     return (
        <li>
-        <span ref="navlink" className="navlink">{this.props.name}</span>
+        <span 
+          onMouseLeave={() => this.props.handleHover('')} 
+          onMouseEnter={() => this.props.handleHover(this.props.component)} 
+          ref="navlink" 
+          className="navlink"
+          style={{ 
+            textDecoration: (this.props.hovered === true) ? 'underline' : 'none',
+            background: (this.props.hovered === true) ? 'yellow' : 'none',
+          }}
+        >
+          {this.props.name}
+        </span>
       </li>
     );
   }

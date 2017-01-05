@@ -19,7 +19,18 @@ class ContentBox extends React.Component {
 
   render() {
     return(
-      <div ref="contentbox" style={{left: `${30*this.props.order}px`, bottom: `${30*this.props.order}px`, zIndex: Math.abs(this.props.order - 10) }} className="contentbox">
+      <div 
+        onMouseLeave={() => this.props.handleHover('')} 
+        onMouseEnter={() => this.props.handleHover(this.props.contentName)} 
+        ref="contentbox" 
+        style={{
+          left: `${30*this.props.order}px`, 
+          bottom: `${30*this.props.order}px`, 
+          zIndex: Math.abs(this.props.order - 10),
+          background: (this.props.hovered === true) ? 'yellow' : 'blue',
+        }} 
+        className="contentbox"
+      >
         this is the content box
       </div>
     )

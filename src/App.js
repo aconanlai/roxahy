@@ -11,8 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftX: [0, 0, 0, 0, 0],
-      rightXY: [[0,0], [0,0], [0,0], [0,0], [0,0]],
+      hovered: '',
       aboutCoords: {
         left: 0,
         right: [0, 0],
@@ -36,6 +35,7 @@ class App extends Component {
     };
     this.handleBoxResize = this.handleBoxResize.bind(this);
     this.handleNavResize = this.handleNavResize.bind(this);
+    this.handleHover = this.handleHover.bind(this);
     this.returnCoords = this.returnCoords.bind(this);
   }
 
@@ -86,12 +86,18 @@ class App extends Component {
     })
   }
 
+  handleHover(component) {
+    this.setState({
+      hovered: component,
+    });
+  }
+
   render() {
     return (
       <div>
         <Hello/>
-        <ContentArea handleBoxResize={this.handleBoxResize} />
-        <Nav handleNavResize={this.handleNavResize} />
+        <ContentArea handleHover={this.handleHover} handleBoxResize={this.handleBoxResize} hovered={this.state.hovered} />
+        <Nav handleHover={this.handleHover} handleNavResize={this.handleNavResize} hovered={this.state.hovered} />
         <Lines {...this.state} />
       </div>
     );

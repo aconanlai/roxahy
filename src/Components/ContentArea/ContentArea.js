@@ -8,7 +8,14 @@ class ContentArea extends React.Component {
       <div className="contentarea">
       {content.reverse().map((cont, i) => {
         return (
-          <ContentBox key={i} handleBoxResize={this.props.handleBoxResize} order={i} contentName={cont}/>
+          <ContentBox 
+            handleHover={this.props.handleHover} 
+            key={i} 
+            handleBoxResize={this.props.handleBoxResize} 
+            order={i} 
+            contentName={cont}
+            hovered={this.props.hovered === cont}
+          />
         )
       })}
       </div>
