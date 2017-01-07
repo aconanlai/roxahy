@@ -11,21 +11,31 @@ body {
   background: linear-gradient(#dfe6fe, #949ab4);  /* Standard syntax */
 }
 
-.contentarea {
+.contentboxholder {
   position: absolute;
-  height:580px;
-  width:380px;
+  height: 580px;
+  width: 380px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .contentbox {
-  background: blue;
   position: absolute;
   height: 460px;
   width: 260px;
+  background: blue;
   border: 1px solid black;
+}
+
+.contentarea {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  background: yellow;
+  transform: translate(-50%, -50%);
 }
 
 .nav {

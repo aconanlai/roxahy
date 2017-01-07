@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import update from 'react-addons-update';
 
 import Hello from './Components/Hello';
+import ContentBoxes from './Components/ContentBoxes/ContentBoxes';
 import ContentArea from './Components/ContentArea/ContentArea';
 import Nav from './Components/Nav/Nav';
 import Lines from './Components/Lines/Lines';
@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       hovered: '',
+      selectedContent: '',
       aboutCoords: {
         left: 0,
         right: [0, 0],
@@ -64,18 +65,10 @@ class App extends Component {
     obj[coordsContainer] = updateCoords;
     this.setState({
       obj,
-    })
-    // this.setState({
-    //   leftX: update(this.state.leftX, {order: {$set: point}}),
-    // })
+    });
   }
 
   handleNavResize(navitem, point) {
-    // const rightXY = this.state.rightXY;
-    // rightXY[order] = point;
-    // this.setState({
-    //   rightXY: rightXY,
-    // })
     const coordsContainer = this.returnCoords(navitem);
     const updateCoords = this.state[coordsContainer];
     updateCoords.right = point;
@@ -83,7 +76,7 @@ class App extends Component {
     obj[coordsContainer] = updateCoords;
     this.setState({
       obj,
-    })
+    });
   }
 
   handleHover(component) {
@@ -96,8 +89,19 @@ class App extends Component {
     return (
       <div>
         <Hello/>
-        <ContentArea handleHover={this.handleHover} handleBoxResize={this.handleBoxResize} hovered={this.state.hovered} />
-        <Nav handleHover={this.handleHover} handleNavResize={this.handleNavResize} hovered={this.state.hovered} />
+        <ContentBoxes
+          handleHover={this.handleHover}
+          handleBoxResize={this.handleBoxResize}
+          hovered={this.state.hovered} 
+        />
+        <ContentArea
+          selectedContent={this.state.selectedContent}
+        />
+        <Nav
+          handleHover={this.handleHover}
+          handleNavResize={this.handleNavResize}
+          hovered={this.state.hovered}
+        />
         <Lines {...this.state} />
       </div>
     );

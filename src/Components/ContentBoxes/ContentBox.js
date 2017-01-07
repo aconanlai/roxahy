@@ -15,7 +15,7 @@ class ContentBox extends React.Component {
   getRightEdge() {
     const point = ReactDOM.findDOMNode(this.refs.contentbox).getBoundingClientRect().right;
     this.props.handleBoxResize(this.props.contentName, point)
-  }
+  }   
 
   render() {
     return(
@@ -24,9 +24,9 @@ class ContentBox extends React.Component {
         onMouseEnter={() => this.props.handleHover(this.props.contentName)} 
         ref="contentbox" 
         style={{
-          left: `${30*this.props.order}px`, 
-          bottom: `${30*this.props.order}px`, 
-          zIndex: Math.abs(this.props.order - 10),
+          right: `${30*this.props.order}px`, 
+          top: `${30*this.props.order}px`, 
+          zIndex: this.props.order,
           background: (this.props.hovered === true) ? 'yellow' : 'blue',
         }} 
         className="contentbox"
