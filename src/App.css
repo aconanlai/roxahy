@@ -30,12 +30,17 @@ body {
 
 .contentarea {
   position: absolute;
-  height: 80%;
-  width: 70%;
   left: 50%;
   top: 50%;
   background: yellow;
   transform: translate(-50%, -50%);
+  transition: height 0.5s, width 0.5s;
+}
+
+.contentarea--close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 
 .nav {

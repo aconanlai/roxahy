@@ -2,32 +2,38 @@ import React from 'react';
 
 class Lines extends React.Component {
   render() {
+    const opac = (this.props.selectedContent === '');
     return (
       <div>
         <div className="line" style={{
           left: this.props.aboutCoords.left,
           top: this.props.aboutCoords.right[1],
-          width: (this.props.aboutCoords.right[0] - this.props.aboutCoords.left)
+          width: (this.props.aboutCoords.right[0] - this.props.aboutCoords.left),
+          opacity: (opac) ? 1 : 0,
         }}></div>
         <div className="line" style={{
           left: this.props.videosCoords.left,
           top: this.props.videosCoords.right[1],
-          width: (this.props.videosCoords.right[0] - this.props.videosCoords.left)
+          width: (this.props.videosCoords.right[0] - this.props.videosCoords.left),
+          opacity: (opac) ? 1 : 0,
         }}></div>
         <div className="line" style={{
           left: this.props.installCoords.left,
           top: this.props.installCoords.right[1],
-          width: (this.props.installCoords.right[0] - this.props.installCoords.left)
+          width: (this.props.installCoords.right[0] - this.props.installCoords.left),
+          opacity: (opac) ? 1 : 0,
         }}></div>
         <div className="line" style={{
           left: this.props.printsCoords.left,
           top: this.props.printsCoords.right[1],
-          width: (this.props.printsCoords.right[0] - this.props.printsCoords.left)
+          width: (this.props.printsCoords.right[0] - this.props.printsCoords.left),
+          opacity: (opac) ? 1 : 0,
         }}></div>
         <div className="line" style={{
           left: this.props.perfCoords.left,
           top: this.props.perfCoords.right[1],
-          width: (this.props.perfCoords.right[0] - this.props.perfCoords.left)
+          width: (this.props.perfCoords.right[0] - this.props.perfCoords.left),
+          opacity: (opac) ? 1 : 0,
         }}></div>
       </div>
     )

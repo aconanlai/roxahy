@@ -105,6 +105,7 @@ class App extends Component {
         />
         <ContentArea
           selectedContent={this.state.selectedContent}
+          handleContentSelect={this.handleContentSelect}
         />
         <Nav
           handleHover={this.handleHover}
