@@ -26,7 +26,8 @@ class NavLink extends Component {
        <li>
         <span 
           onMouseLeave={() => this.props.handleHover('')} 
-          onMouseEnter={() => this.props.handleHover(this.props.component)} 
+          onMouseEnter={() => this.props.handleHover(this.props.component)}
+          onClick={() => this.props.handleContentSelect(this.props.component)}
           ref="navlink" 
           className="navlink"
           style={{ 

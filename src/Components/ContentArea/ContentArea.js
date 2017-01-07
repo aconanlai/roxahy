@@ -2,10 +2,10 @@ import React from 'react';
 
 class ContentArea extends React.Component {
   render() {
-    const style = (this.props.selectedContent === '') ? { opacity: 0, zIndex: -9 } : { opacity: 1, zIndex: 9 };
+    const style = (this.props.selectedContent === '') ? { opacity: 0, zIndex: -9 } : { opacity: 1, zIndex: 99 };
     return (
       <div className="contentarea" style={style}>
-        eh
+        {this.props.selectedContent}
       </div>
     );
   }

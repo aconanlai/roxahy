@@ -31,7 +31,7 @@ body {
 .contentarea {
   position: absolute;
   height: 80%;
-  width: 80%;
+  width: 70%;
   left: 50%;
   top: 50%;
   background: yellow;
@@ -39,7 +39,6 @@ body {
 }
 
 .nav {
-  right: 10%;
   position: fixed;
   top: 50%;
   transform: translateY(-70%);
@@ -69,7 +68,7 @@ body {
   height: 1px;
   border: 0;
   border-top: 1px solid black;
-  z-index: 99;
+  z-index: 10;
 }
 
 .hello {

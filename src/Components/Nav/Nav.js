@@ -10,8 +10,9 @@ class Nav extends Component {
       { name: 'videos', namefr: '', component: 'videos' },
       { name: 'about', namefr: '', component: 'about' },
     ];
+    const style = (this.props.selectedContent === '') ? { right: '10%' } : { right: '2%' };
     return (
-      <div className="nav">
+      <div className="nav" style={style}>
         <ul className="navlist">
           {links.map((link, i) => {
             return (
@@ -20,8 +21,9 @@ class Nav extends Component {
                 component={link.component} 
                 name={link.name} 
                 handleNavResize={this.props.handleNavResize} 
-                handleHover={this.props.handleHover} 
-                hovered={this.props.hovered === link.component}
+                handleHover={this.props.handleHover}
+                handleContentSelect={this.props.handleContentSelect}
+                hovered={this.props.hovered === link.component || this.props.selectedContent === link.component}
               />
             );
           })}

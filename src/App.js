@@ -36,6 +36,7 @@ class App extends Component {
     };
     this.handleBoxResize = this.handleBoxResize.bind(this);
     this.handleNavResize = this.handleNavResize.bind(this);
+    this.handleContentSelect = this.handleContentSelect.bind(this);
     this.handleHover = this.handleHover.bind(this);
     this.returnCoords = this.returnCoords.bind(this);
   }
@@ -85,14 +86,22 @@ class App extends Component {
     });
   }
 
+  handleContentSelect(component) {
+    this.setState({
+      selectedContent: component,
+    });
+  }
+
   render() {
     return (
       <div>
-        <Hello/>
+        <Hello />
         <ContentBoxes
           handleHover={this.handleHover}
           handleBoxResize={this.handleBoxResize}
-          hovered={this.state.hovered} 
+          handleContentSelect={this.handleContentSelect}
+          selectedContent={this.state.selectedContent}
+          hovered={this.state.hovered}
         />
         <ContentArea
           selectedContent={this.state.selectedContent}
@@ -100,7 +109,9 @@ class App extends Component {
         <Nav
           handleHover={this.handleHover}
           handleNavResize={this.handleNavResize}
+          handleContentSelect={this.handleContentSelect}
           hovered={this.state.hovered}
+          selectedContent={this.state.selectedContent}
         />
         <Lines {...this.state} />
       </div>

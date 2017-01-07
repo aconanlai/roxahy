@@ -21,7 +21,8 @@ class ContentBox extends React.Component {
     return(
       <div 
         onMouseLeave={() => this.props.handleHover('')} 
-        onMouseEnter={() => this.props.handleHover(this.props.contentName)} 
+        onMouseEnter={() => this.props.handleHover(this.props.contentName)}
+        onClick={() => this.props.handleContentSelect(this.props.contentName)}
         ref="contentbox" 
         style={{
           right: `${30*this.props.order}px`, 

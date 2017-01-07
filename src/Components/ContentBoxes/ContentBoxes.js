@@ -11,7 +11,8 @@ class ContentBoxes extends React.Component {
           <ContentBox 
             handleHover={this.props.handleHover} 
             key={i} 
-            handleBoxResize={this.props.handleBoxResize} 
+            handleBoxResize={this.props.handleBoxResize}
+            handleContentSelect={this.props.handleContentSelect}
             order={i} 
             contentName={cont}
             hovered={this.props.hovered === cont}
