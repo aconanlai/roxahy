@@ -29,7 +29,7 @@ class ContentBox extends React.Component {
           right: `${30 * this.props.order}px`,
           top: `${30 * this.props.order}px`,
           zIndex: this.props.order,
-          boxShadow: (this.props.hovered === true) ? '4px 4px' : '2px 2px grey',
+          boxShadow: (this.props.hovered === true) ? '4px -4px 4px rgba(0, 0, 0, 0.5)' : '2px -2px 2px rgba(0, 0, 0, 0.5)',
         }}
         className="contentbox"
       >{this.props.children}

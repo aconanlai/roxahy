@@ -90,6 +90,10 @@ class App extends Component {
     this.setState({
       selectedContent: component,
     });
+    if (component === '') {
+      // SUPER hack to ensure lines remain synced
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
+    }
   }
 
   render() {

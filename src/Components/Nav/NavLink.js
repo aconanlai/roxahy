@@ -9,16 +9,15 @@ class NavLink extends Component {
 
   componentDidMount() {
     this.getLeftEdge();
-    window.addEventListener("resize", this.getLeftEdge);
-    
-  };
+    window.addEventListener('resize', this.getLeftEdge);
+  }
 
   getLeftEdge() {
     const bounds = ReactDOM.findDOMNode(this.refs.navlink).getBoundingClientRect();
     const x = bounds.left;
     const y = (bounds.top + bounds.bottom) / 2;
     const point = [x, y];
-    this.props.handleNavResize(this.props.component, point)
+    this.props.handleNavResize(this.props.component, point);
   }
 
   render() {
