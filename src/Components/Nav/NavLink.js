@@ -32,7 +32,7 @@ class NavLink extends Component {
           className="navlink"
           style={{ 
             textDecoration: (this.props.hovered === true) ? 'underline' : 'none',
-            background: (this.props.hovered === true) ? 'yellow' : 'none',
+            textShadow: (this.props.hovered === true) ? '2px 2px grey' : '1px 1px grey',
           }}
         >
           {this.props.name}

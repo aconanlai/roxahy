@@ -9,33 +9,37 @@ class ContentBox extends React.Component {
 
   componentDidMount() {
     this.getRightEdge();
-    window.addEventListener("resize", this.getRightEdge);
-  };
+    window.addEventListener('resize', this.getRightEdge);
+  }
 
   getRightEdge() {
     const point = ReactDOM.findDOMNode(this.refs.contentbox).getBoundingClientRect().right;
-    this.props.handleBoxResize(this.props.contentName, point)
-  }   
+    this.props.handleBoxResize(this.props.contentName, point);
+  }
 
   render() {
-    return(
-      <div 
-        onMouseLeave={() => this.props.handleHover('')} 
+    // ContentBoxes passes thumbnail component to ContentBox, renders as this.props.children below
+    return (
+      <div
+        onMouseLeave={() => this.props.handleHover('')}
         onMouseEnter={() => this.props.handleHover(this.props.contentName)}
         onClick={() => this.props.handleContentSelect(this.props.contentName)}
-        ref="contentbox" 
+        ref="contentbox"
         style={{
-          right: `${30*this.props.order}px`, 
-          top: `${30*this.props.order}px`, 
+          right: `${30 * this.props.order}px`,
+          top: `${30 * this.props.order}px`,
           zIndex: this.props.order,
-          background: (this.props.hovered === true) ? 'yellow' : 'blue',
-        }} 
+          boxShadow: (this.props.hovered === true) ? '4px 4px' : '2px 2px grey',
+        }}
         className="contentbox"
-      >
-        this is the content box
+      >{this.props.children}
       </div>
-    )
+    );
   }
 }
 
 export default ContentBox;
+
+
+// this was in render to conditionally style box based on hover state
+// background: (this.props.hovered === true) ? 'yellow' : 'blue',
